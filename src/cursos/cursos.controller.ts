@@ -5,14 +5,25 @@ import { CursosService } from './cursos.service.js';
 export class CursosController {
     constructor(private readonly cursosService: CursosService) { }
 
-    @Get('')
-    getCursos() {
-        return this.cursosService.getCursos()
+    @Get()
+    getCursos(): string[] {
+        return this.cursosService.getCursos();
     }
 
-    @Get(':name')
-    getCurso(@Param('name') name: string) {
+    @Get(":name")
+    getCurso(@Param('name') name: string): string {
+        console.log(name)
         return `Informações sobre o curso técnico: ${name}`
     }
-    
+
+    @Get(":sigla/modulo/:numero")
+    getModulo(
+        @Param('sigla') sigla: string,
+        @Param('numero') numero: number
+    ) {
+        return {
+            curso: sigla,
+            moduloConsultado: numero
+        }
+    }
 }

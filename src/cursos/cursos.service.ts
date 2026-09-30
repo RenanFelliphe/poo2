@@ -2,8 +2,11 @@ import { Injectable } from '@nestjs/common';
 
 @Injectable()
 export class CursosService {
-  
-    getCursos() {
-        return ['PRÉ-ENEM', 'Inglês', 'Inteligência Artificial']
+    getCursos(): string[] {
+        return [
+            'Desenvolvimento de Sistemas',
+            'Eletrotécnica',
+            'Mecânica'
+        ]
     }
 }

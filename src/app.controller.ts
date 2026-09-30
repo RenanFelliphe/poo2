@@ -1,6 +1,6 @@
 import { Controller, Get } from '@nestjs/common';
 import { AppService } from './app.service.js';
-import type { IDisciplina } from './app.service.js';
+import type { IInfo } from './app.service.js';
 
 
 @Controller()
@@ -12,8 +12,8 @@ export class AppController {
     return this.appService.getHello();
   }
 
-  @Get('info')
-  getInfo(): IDisciplina {
+  @Get("info")
+  getInfo(): IInfo {
     return this.appService.getInfo()
   }
 }
