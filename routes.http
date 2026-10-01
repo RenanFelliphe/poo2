@@ -1,0 +1,15 @@
+###
+GET http://localhost:3000/cursos
+
+###
+
+PUT http://localhost:3000/cursos/3
+Content-Type: application/json
+
+{
+    "id": 2,
+    "name": "abc",
+    "turno": "noite"
+}
+
+###
